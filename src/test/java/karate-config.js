@@ -6,7 +6,7 @@ function fn() {
   }
   var config = {
     env: env,
-    host : 'http://localhost:8080'
+    host : 'http://localhost:8080/api'
   }
   if (env == 'dev') {
     // customize
