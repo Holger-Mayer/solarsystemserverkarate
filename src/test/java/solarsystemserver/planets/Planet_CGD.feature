@@ -6,7 +6,7 @@ Background:
 
 
 
-Scenario: get and store Pluto, remove Pluto, verify Pluto gone, create Pluto
+Scenario: SOL_T5 get and store Pluto, remove Pluto, verify Pluto gone, create Pluto
 
     Given path '/planets/9'
     When method get

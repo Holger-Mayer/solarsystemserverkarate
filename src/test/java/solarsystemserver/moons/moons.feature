@@ -45,14 +45,14 @@ Feature: sample moon server test script
       "albedo": "0.068±0.007"
     }
     """
-  Scenario: get all moons for venus 
+  Scenario: SOL_T31 get all moons for venus 
     Given path '/moons/planet/2'
     When method get
     Then status 200
     And match response == []
 
 
-  Scenario: get all moons for earth 
+  Scenario: SOL_T3 get all moons for earth 
     Given path '/moons/planet/3'
     When method get
     Then status 200
@@ -60,7 +60,7 @@ Feature: sample moon server test script
     And match response[0] == lunar
    
    
-  Scenario: get all moons for mars 
+  Scenario: SOL_T32 get all moons for mars 
     Given path '/moons/planet/4'
     When method get
     Then status 200
@@ -68,3 +68,8 @@ Feature: sample moon server test script
     And match response[0] == phobos
     And match response[1] == deimos 
    
+  Scenario: SOL_T4 get moon via id
+    Given path '/moons/0'
+    When method get
+    Then status 200
+    And match response == lunar

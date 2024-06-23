@@ -10,7 +10,8 @@ class SolarSystemServerTest {
     @Test
     void testParallel() {
         Results results = Runner.path("classpath:solarsystemserver")
-                //.outputCucumberJson(true)
+                .outputCucumberJson(true)
+                .outputJunitXml(true)
                 .parallel(5);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }

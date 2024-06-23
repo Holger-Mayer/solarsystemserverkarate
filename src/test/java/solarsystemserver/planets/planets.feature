@@ -29,7 +29,7 @@ Background:
   }
   """
  
-Scenario: get all planets
+Scenario: SOL_T1 get all planets
   Given path '/planets'
   When method get
   Then status 200
@@ -40,7 +40,7 @@ Scenario: get all planets
 
   
 
-Scenario: get  earth
+Scenario: SOL_T29 get  earth
   Given path '/planets/3'
   When method get
   Then status 200
@@ -62,7 +62,7 @@ Scenario: get  earth
   }
   """
 
-Scenario: get  planet X
+Scenario: SOL_T30 get  planet X
   Given path '/planets/10'
   When method get
   Then status 404
