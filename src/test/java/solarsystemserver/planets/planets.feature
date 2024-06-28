@@ -3,7 +3,8 @@ Feature: sample planet rest server test script
 
 Background:
   * url host
-
+  * karate.call('classpath:/helper/resetdata.feature')
+  
   * def shortResponse = 
  """
   {
@@ -28,6 +29,8 @@ Background:
     satellites:"#number"
   }
   """
+
+
  
 Scenario: SOL_T1 get all planets
   Given path '/planets'

@@ -3,8 +3,8 @@ Feature: sample planet rest server test script
 
 Background:
   * url host
-
-
+  * karate.call('classpath:/helper/resetdata.feature')
+ 
 
 Scenario: SOL_T5 get and store Pluto, remove Pluto, verify Pluto gone, create Pluto
 

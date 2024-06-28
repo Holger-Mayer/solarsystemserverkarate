@@ -3,7 +3,8 @@ Feature: sample moon server test script
 
   Background:
     * url host
-
+    * karate.call('classpath:/helper/resetdata.feature')
+    
    * def lunar = 
  """
     { 
@@ -45,6 +46,9 @@ Feature: sample moon server test script
       "albedo": "0.068±0.007"
     }
     """
+
+   
+   
   Scenario: SOL_T31 get all moons for venus 
     Given path '/moons/planet/2'
     When method get
