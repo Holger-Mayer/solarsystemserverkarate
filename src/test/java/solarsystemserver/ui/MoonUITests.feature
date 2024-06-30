@@ -94,3 +94,19 @@ Scenario: SOL-T72 Add moon with full set of parameter but blank name
     And  submit().click('#addmoon')
     And  waitForUrl('http://localhost:8080/addmoon')
 
+
+Scenario: SOL-T73 Delete a moon from Planet Mars
+
+    * configure driver = { type: 'chrome', showDriverLog: false }
+ 
+    Given driver 'http://localhost:8080/home'
+    When waitForUrl('http://localhost:8080/home')
+    And  click('{a}Mars')
+    And  waitForUrl('http://localhost:8080/planets/4')
+    And  click('{a}Deimos')
+    And  waitForUrl('http://localhost:8080/moons/2')
+    And  click('{a}Delete')
+    And  waitForUrl('http://localhost:8080/planets/4')
+    Then match html('.container') contains "Mars"
+    Then match html('.container') !contains "Deimos"
+ 

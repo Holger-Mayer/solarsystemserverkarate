@@ -96,3 +96,20 @@ Scenario: SOL-T65 Add a planet with a full set of parameter
         And  submit().click('#addplanet')
         And  waitForUrl('http://localhost:8080/addplanet')
          Then match html('.container') contains 'Planet XI'
+
+
+
+        Scenario: SOL-T74 Delete planet
+
+            * configure driver = { type: 'chrome', showDriverLog: false }
+         
+            Given driver 'http://localhost:8080/home'
+            When waitForUrl('http://localhost:8080/home')
+            And  click('{a}Earth')
+            And  waitForUrl('http://localhost:8080/planets/3')
+            And  click('{a}Delete')
+            And  waitForUrl('http://localhost:8080/home')
+            Then match html('.container') contains "The Solar System"
+            And match html('.container') !contains "Earth"
+        
+        
